@@ -310,3 +310,58 @@
 //   })
 //   .then((ip) => console.log(ip))
 //   .catch((err) => console.error(err));
+
+// {
+//  "movies" [
+//  {
+//  "title": "Movie 1",
+//  "description": "Super Movie 1"
+//  },
+//  {
+//  "title": "Movie 2",
+//  "description": "Super Movie 2"
+//  }
+//  ],
+//  "count": 2
+// }
+
+// const json = `{"movies":[],"count":0}`
+// const objFromJson = JSON.parse(json)
+
+// const jsonFromObj = JSON.stringify(objFromJson)
+
+// console.log(json === jsonFromObj);
+
+// const options = {
+//   method: 'GET', //domyślne ustawienie
+// };
+// const promise = fetch('https://jsonplaceholder.typicode.com/posts', options);
+
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.json();
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((data) => console.log(data))
+//   .catch((err) => console.error(err));
+
+// const data = { title: 'foo', body: 'text' };
+// const options = {
+//   method: 'POST', //odpowiednia metoda
+//   body: JSON.stringify(data), // konwersja danych
+//   headers: { 'Content-Type': 'application/json' },
+//   // informacja o typie wysylanych danych
+// };
+// const promise = fetch('https://jsonplaceholder.typicode.com/posts', options);
+
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.json();
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((data) => console.log(data))
+//   .catch((err) => console.error(err));
