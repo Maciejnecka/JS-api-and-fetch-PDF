@@ -150,3 +150,163 @@
 // Promise.race([getAsyncData(4, 2), getAsyncData(9, 3)])
 //   .then((values) => console.log(values))
 //   .catch((err) => console.error(err));
+
+// const promise = fetch('https:///api.ipify.org');
+
+// promise
+//   .then((resp) => resp.text())
+//   .then((ip) => console.log(ip))
+//   .catch((err) => console.error(err))
+//   .finally(() => {
+//     console.log('Odpytywanie API zakończone!');
+//   });
+
+// const promise = fetch('https://api.ipify.org');
+
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.text();
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((ip) => console.log(ip))
+//   .catch((err) => console.error(err))
+//   .finally(() => {
+//     console.log('Odpytywanie API zakończone!');
+//   });
+
+// const promise = fetch('http://ip-api.com/csv/87.206.56.154');
+
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.text();
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((ip) => console.log(ip))
+//   .catch((err) => console.error(err))
+//   .finally(() => {
+//     console.log('Odpytywanie API zakończone!');
+//   });
+
+// const promise = fetch('https://official-joke-api.appspot.com/jokes/16');
+
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.json();
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((joke) => console.log(joke))
+//   .catch((err) => console.error(err))
+//   .finally(() => {
+//     console.log('Odpytywanie API zakończone!');
+//   });
+
+// const promise = fetch('https://jsonplaceholder.typicode.com/todos/1', {
+//   method: 'GET',
+// }); // domyślne ustawienie
+
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.json();
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((ip) => console.log(ip))
+//   .catch((err) => console.error(err))
+//   .finally(() => {
+//     console.log('Odpytywanie API zakończone');
+//   });
+
+// const options = {
+//   method: 'POST',
+//   body: { name: 'Jan Kowalski' },
+// };
+// const promise = fetch('https://localhost.api/users', options);
+
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.json();
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((ip) => console.log(ip))
+//   .catch((err) => console.error(err))
+//   .finally(() => {
+//     console.log('Odpytywanie API zakończone');
+//   });
+
+// const options = {
+//   method: 'DELETE',
+// };
+// const promise = fetch('https://localhost.api/users/11', options);
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.json();
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((ip) => console.log(ip))
+//   .catch((err) => console.error(err))
+//   .finally(() => {
+//     console.log('Odpytywanie API zakończone');
+//   });
+
+// const options = {
+//   method: 'GET', //domyślne ustawienie
+// };
+// const promise = fetch('https://jsonplaceholder.typicode.com/todos', options);
+
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.json();
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((ip) => console.log(ip))
+//   .catch((err) => console.error(err));
+
+// const options = { method: 'GET' };
+// const promise = fetch(
+//   'https://jsonplaceholder.typicode.com/todos/wrongID',
+//   options
+// );
+
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.json();
+//     }
+//     if (resp.status === 404) {
+//       return Promise.reject('NOT FOUND');
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((ip) => console.log(ip))
+//   .catch((err) => console.error(err));
+
+// const options = {
+//   method: 'GET', // domyslne ustawienie
+// };
+// const promise = fetch('https://premium-api.example/news', options);
+
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.json();
+//     }
+//     if (resp.status === 429) {
+//       return Promise.reject('LIMIT EXCEEDED');
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((ip) => console.log(ip))
+//   .catch((err) => console.error(err));
