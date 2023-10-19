@@ -1,0 +1,34 @@
+{
+  "excursions": [
+    {
+      "id": 2,
+      "name": "Zwiedzanie Warszawy",
+      "price": 120
+    },
+    {
+      "name": "ASDAS",
+      "price": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "price": "",
+      "id": 5
+    },
+    {
+      "name": "s",
+      "price": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "price": "ssss",
+      "id": 7
+    },
+    {
+      "name": "Zwiedzanie Gacka",
+      "price": "0",
+      "id": 8
+    }
+  ]
+}
