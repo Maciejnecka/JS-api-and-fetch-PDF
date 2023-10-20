@@ -367,6 +367,15 @@
 //   .catch((err) => console.error(err));
 //   .catch((err) => console.error(err));
 //   .catch((err) => console.error(err));
+// promise
+//   .then((resp) => {
+//     if (resp.ok) {
+//       return resp.json();
+//     }
+//     return Promise.reject(resp);
+//   })
+//   .then((data) => console.log(data))
+//   .catch((err) => console.error(err));
 const apiUrl = 'http://localhost:3000/excursions';
 
 document.addEventListener('DOMContentLoaded', init);
