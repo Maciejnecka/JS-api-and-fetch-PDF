@@ -1,4 +1,9 @@
 'use strict';
+
+const { rejects } = require('assert');
+const { response } = require('express');
+const { resolve } = require('path');
+
 // function getAsyncData(callback) {
 //   const time = Math.random() * 5000;
 //   const insideData = { name: 'secret', value: null };
@@ -376,16 +381,66 @@
 //   })
 //   .then((data) => console.log(data))
 //   .catch((err) => console.error(err));
-import API from './API';
-import Excursions from './Excursions';
+// import API from './API';
+// import Excursions from './Excursions';
 
-document.addEventListener('DOMContentLoaded', init);
+// document.addEventListener('DOMContentLoaded', init);
 
-function init() {
-  const api = new API();
-  const excursions = new Excursions(api);
-  excursions.load();
-  excursions.remove();
-  excursions.add();
-  excursions.update();
+// function init() {
+//   const api = new API();
+//   const excursions = new Excursions(api);
+//   excursions.load();
+//   excursions.remove();
+//   excursions.add();
+//   excursions.update();
+// }
+
+// function getRandomNumber() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(Math.random());
+//     }, 100);
+//   });
+// }
+
+// async function showRandomPosition() {
+//   const x = await getRandomNumber();
+//   const y = await getRandomNumber();
+//   console.log(x, y);
+// }
+// // function showRandomPosition() {
+// //   let x, y;
+// //   Promise.all([getRandomNumber(), getRandomNumber()]).then((responses) => {
+// //     const [x, y] = responses;
+// //     console.log(x, y);
+// //   });
+// // }
+
+// // showRandomPosition();
+
+// const position = getRandomNumber();
+// position.then((resp) => console.log(resp));
+
+function getRandomNumber() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject('Błąd!');
+    }, 100);
+  });
 }
+
+async function getRandomPosition() {
+  let x, y;
+  try {
+    x = await getRandomNumber();
+    y = await getRandomNumber();
+  } catch (e) {
+    console.log('Wiadomość:', e);
+    x = 0;
+    y = 0;
+  }
+  return [x, y];
+}
+
+const position = getRandomPosition();
+position.then((resp) => console.log(resp));
