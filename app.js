@@ -376,6 +376,9 @@
 //   })
 //   .then((data) => console.log(data))
 //   .catch((err) => console.error(err));
+import API from './API';
+const api = new API();
+
 const apiUrl = 'http://localhost:3000/excursions';
 
 document.addEventListener('DOMContentLoaded', init);
@@ -389,12 +392,8 @@ function init() {
 }
 
 function loadExcursions() {
-  fetch(apiUrl)
-    .then((resp) => {
-      if (resp.ok) {
-        return resp.json();
-      }
-    })
+  api
+    .loadData()
     .then((data) => {
       insertExcursions(data);
     })
@@ -488,5 +487,23 @@ function updateExcursions() {
         spanList.forEach((span) => (span.contentEditable = true));
       }
     }
+  });
+}
+
+function addExcursions() {
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const { name, price } = e.target.elements;
+    const data = {
+      name: name.value,
+      price: price.value,
+    };
+
+    api
+      .addData(data)
+      .catch((err) => console.error(err))
+      .finally(loadExcursions);
   });
 }
