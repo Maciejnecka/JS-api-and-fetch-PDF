@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // importuję odpowiedni plugin
 module.exports = {
-  entry: './app.js',
+  entry: ['whatwg-fetch', './app.js'],
   // definiuje plik wejściowy
   output: {
     path: path.resolve(__dirname, 'build'),
